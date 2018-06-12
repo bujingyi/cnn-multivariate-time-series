@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 import estimator_model.estimator_model
-import estimator_utils
+
 
 def model_fn(features, labels, mode, params):
     network = estimator_model.estimator_model(params)
@@ -42,9 +42,9 @@ def model_fn(features, labels, mode, params):
     metrics = {'mse': mse}
     
     return tf.estimator.EstimatorSpec(
-            mode=mode,
-            predictions=predictions,
-            loss=loss,
-            train_op=train_op,
-            eval_metric_ops=metrics
-            )
+        mode=mode,
+        predictions=predictions,
+        loss=loss,
+        train_op=train_op,
+        eval_metric_ops=metrics
+    )

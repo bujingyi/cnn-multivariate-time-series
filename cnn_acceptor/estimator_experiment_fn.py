@@ -11,12 +11,12 @@ def experiment_fn(run_config, params):
     run_config = run_config.replace(save_checkpoints_steps=params.min_eval_frequency)
     estimator = get_estimator(run_config, params)
     experiment = tf.contrib.learn.Experiment(
-            estimator=estimator,
-            train_input_fn=lambda: input_fn(True, params.train_data_file, batch_size, params.train_epochs),
-            eval_input_fn=lambda: input_fn(False, params.eval_data_file, batch_size),
-            eval_steps=None,
-            min_eval_frequency=params.min_eval_frequency
-            )
+        estimator=estimator,
+        train_input_fn=lambda: input_fn(True, params.train_data_file, batch_size, params.train_epochs),
+        eval_input_fn=lambda: input_fn(False, params.eval_data_file, batch_size),
+        eval_steps=None,
+        min_eval_frequency=params.min_eval_frequency
+    )
     
     return experiment
 
@@ -26,10 +26,10 @@ def get_estimator(run_config, params):
     Create an estimator for experiment
     """
     return tf.estimator.Estimator(
-            model_fn=model_fn,
-            config=run_config,
-            params=params
-            )
+        model_fn=model_fn,
+        config=run_config,
+        params=params
+    )
 
 
 def get_hooks():
@@ -38,9 +38,9 @@ def get_hooks():
     """
     tensor_to_log = {'learning_rate': 'learning_rate'}
     logging_tensor_hook = tf.train.LoggingTensorHook(
-            tensors=tensor_to_log,
-            every_n_iter=100
-            )
+        tensors=tensor_to_log,
+        every_n_iter=100
+    )
     return [logging_tensor_hook]
 
 

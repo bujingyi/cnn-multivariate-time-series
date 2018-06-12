@@ -6,7 +6,7 @@ from estimator_input_fn import input_data
     
 if __name__ == '__main__':
     """
-    main function...
+    main function
     """
     # create training set
     if not os.path.exists(train_file):
@@ -16,7 +16,7 @@ if __name__ == '__main__':
         input_data(*args)
         
     params = tf.contrib.training.HParams(
-        model='cnn',
+    	model='cnn',
         init_learning_rate=1e-4,
         train_epochs=train_epochs,
         train_steps_per_iteration=100,
@@ -27,6 +27,6 @@ if __name__ == '__main__':
         train_data_file=train_npy_file,
         eval_data_file=eval_npy_file,
         architecture='resnet'
-        )
+       )
     
     run_experiment(params)
