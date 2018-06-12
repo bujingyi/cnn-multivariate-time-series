@@ -18,7 +18,7 @@ def estimator_model(params):
     
     if params.model == 'cnn':
         model_params = {'block': resnet_model.bottleneck_block, 'layers': [3, 4, 6, 3]}
-        return resnet_model.n4b_resnet_v2_generator(
+        return resnet_model.resnet_generator(
                 model_params['block'], 
                 model_params['layers'], 
                 params.out_width, 

@@ -100,7 +100,7 @@ def block_layer(inputs, filters, block_fn, blocks, strides, is_training, name, d
     return tf.identity(inputs, name)
 
 
-def n4b_resnet_v2_generator(block_fn, layers, out_width, data_format=None):
+def resnet_generator(block_fn, layers, out_width, data_format=None):
     """Generator for ImageNet ResNet v2 models."""
     if data_format is None:
         data_format = ('channels_first' if tf.test.is_built_with_cuda() else 'channels_last')
