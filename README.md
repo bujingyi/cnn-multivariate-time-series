@@ -10,3 +10,5 @@ for solving multivariate time series
 2. classification
 
 respectively.
+
+CNN as Acceptor was wrappered in TensorFlow's high level API - Estimators, Experiments, and Datasets.
