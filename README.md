@@ -1,4 +1,4 @@
-# cnn-multivariate-time-series
+# CNN Multivariate Time Series Processing
 CNN for multivariate time series processing with TensorFlow
 
 Two frameworks including:

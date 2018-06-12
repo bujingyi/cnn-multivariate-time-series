@@ -3,7 +3,7 @@ from cnn_acceptor import resnet_model
 
 def estimator_model(params):
     model_params = {'init': 'do not know how to manage this piece of code...'}
-    if params.model == 'rnn':
+    if params.model == 'rnn':  # not implemented, just to show the ideas
         if params.cell == 'lstm':
             model_params['rnn'] = rnn_model.lstm_block
         if params.cell == 'gru':
